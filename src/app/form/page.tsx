@@ -76,7 +76,7 @@ export default function FormPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-foreground">
       <header className="sticky top-0 z-40 w-full border-b border-gray-800 bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg">
         <div className="container flex h-14 items-center">
-          <div className="w-full  hidden md:flex">
+          <div className="justify-center w-full hidden md:flex">
             <Link href="/" className=" flex items-center space-x-2">
               <span className="hidden font-bold sm:inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                 Portfolio Builder
