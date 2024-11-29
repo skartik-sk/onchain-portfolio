@@ -27,12 +27,12 @@ interface PortfolioData {
       twitter: string;
     };
   };
-  experiences: { company: string; position: string; description: string }[];
+  experiences: { company: string;link:string, position: string; description: string }[];
   projects: { name: string; link: string; description: string }[];
 }
 
 export default function PortfolioPage() {
-  const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(null);
+  const [portfolioData, setPortfolioData] = useState<PortfolioData | null>();
 
   useEffect(() => {
     const basicInfo = JSON.parse(
@@ -166,6 +166,9 @@ export default function PortfolioPage() {
                       className="relative pl-6 pb-4 border-l-2 border-pink-500 last:border-l-0"
                     >
                       <div className="absolute w-4 h-4 bg-pink-500 rounded-full -left-[9px] top-1"></div>
+                      <h3 className="font-semibold text-pink-400">
+                        {exp.link}
+                      </h3> 
                       <h3 className="font-semibold text-pink-400">
                         {exp.position}
                       </h3>

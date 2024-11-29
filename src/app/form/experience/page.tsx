@@ -12,7 +12,7 @@ import Link from 'next/link'
 
 export default function ExperienceForm() {
   const router = useRouter()
-  const [experiences, setExperiences] = useState([{ company: '', position: '', description: '' }])
+  const [experiences, setExperiences] = useState([{ company: '',link:'', position: '', description: '' }])
 
   useEffect(() => {
     const savedData = localStorage.getItem('portfolioExperiences')
@@ -28,7 +28,7 @@ export default function ExperienceForm() {
   }
 
   const addExperience = () => {
-    setExperiences([...experiences, { company: '', position: '', description: '' }])
+    setExperiences([...experiences, { company: '',link:'', position: '', description: '' }])
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -73,6 +73,12 @@ export default function ExperienceForm() {
                     value={exp.company}
                     onChange={(e) => handleExperienceChange(index, 'company', e.target.value)}
                     placeholder="Company"
+                    className="bg-gray-800 text-white border-gray-700"
+                  />
+                  <Input
+                    value={exp.link}
+                    onChange={(e) => handleExperienceChange(index, 'position', e.target.value)}
+                    placeholder="Link"
                     className="bg-gray-800 text-white border-gray-700"
                   />
                   <Input
