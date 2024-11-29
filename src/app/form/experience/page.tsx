@@ -34,7 +34,7 @@ export default function ExperienceForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     localStorage.setItem('portfolioExperiences', JSON.stringify(experiences))
-    router.push('/form/projects')
+    router.push('/portfolio')
   }
 
   return (
@@ -89,18 +89,17 @@ export default function ExperienceForm() {
                   />
                 </div>
               ))}
+              <div className=' justify-between flex'>
+
+             
               <Button type="button" onClick={addExperience} className="gradient-button text-white">
                 <span>Add Experience</span>
               </Button>
               <div className="flex justify-between">
-                <Link href="/form">
-                  <Button className="gradient-button text-white">
-                    <span>Back to Basic Info</span>
-                  </Button>
-                </Link>
+                
                 <Button type="submit" className="gradient-button text-white">
-                  <span>Save and Continue to Projects</span>
-                </Button>
+                  <span>Save </span>
+                </Button> </div>
               </div>
             </form>
           </CardContent>

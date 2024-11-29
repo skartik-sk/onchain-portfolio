@@ -7,12 +7,12 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
-  Github,
   Linkedin,
   Twitter,
   ExternalLink,
   Briefcase,
   FolderGit2,
+  PanelsTopLeft,
 } from "lucide-react";
 
 interface PortfolioData {
@@ -58,15 +58,15 @@ export default function PortfolioPage() {
           <div className="mr-4 hidden md:flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <span className="hidden font-bold sm:inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                {portfolioData.basicInfo.name}
+                Portfolio Builder
               </span>
             </Link>
           </div>
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
             <nav className="flex items-center">
               <Link href="/form">
-                <Button className="gradient-button">
-                  <span>Edit Portfolio</span>
+                <Button className="gradient-button text-white">
+                  <span>Add Experience</span>
                 </Button>
               </Link>
             </nav>
@@ -80,20 +80,20 @@ export default function PortfolioPage() {
             <CardContent className="p-6">
               <div className="flex flex-col items-center text-center">
                 <img
-                  src={portfolioData.basicInfo.imageUrl}
-                  alt={portfolioData.basicInfo.name}
+                  src="https://pbs.twimg.com/profile_images/1679117799019659264/VT1j20Ib_400x400.jpg"
+                  alt="Bhopal Dao"
                   className="w-32 h-32 rounded-full mb-4 border-2 border-pink-500"
                 />
                 <h1 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                  {portfolioData.basicInfo.name}
+                Bhopal DAO
                 </h1>
                 <p className="text-gray-400 mb-4">
-                  {portfolioData.basicInfo.bio}
+                Bhopal DAO is a pioneering blockchain community that fosters collaboration, innovation, and growth. Connect with like-minded individuals, share knowledge, and contribute to groundbreaking projects
                 </p>
                 <div className="flex space-x-4 mb-4">
-                  {portfolioData.basicInfo.socialMedia.github && (
+            
                     <a
-                      href={portfolioData.basicInfo.socialMedia.github}
+                      href="https://x.com/Bhopal_Dao"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -102,13 +102,13 @@ export default function PortfolioPage() {
                         size="icon"
                         className="rounded-full border-pink-500 hover:bg-pink-500 hover:text-white transition-all duration-300"
                       >
-                        <Github className="h-4 w-4" />
+                        <PanelsTopLeft className="h-4 w-4" />
                       </Button>
                     </a>
-                  )}
-                  {portfolioData.basicInfo.socialMedia.linkedin && (
+                
+
                     <a
-                      href={portfolioData.basicInfo.socialMedia.linkedin}
+                      href="https://www.linkedin.com/company/bhopal-dao/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -120,10 +120,10 @@ export default function PortfolioPage() {
                         <Linkedin className="h-4 w-4" />
                       </Button>
                     </a>
-                  )}
-                  {portfolioData.basicInfo.socialMedia.twitter && (
+              
+
                     <a
-                      href={portfolioData.basicInfo.socialMedia.twitter}
+                      href="https://x.com/Bhopal_Dao"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -135,10 +135,10 @@ export default function PortfolioPage() {
                         <Twitter className="h-4 w-4" />
                       </Button>
                     </a>
-                  )}
+
                 </div>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {portfolioData.basicInfo.skills.map((skill, index) => (
+                    {["Blockchain", "Decentralization", "Smart Contracts", "Cryptocurrency", "DAO", "NFT", "DeFi", "Web3", "Community Building", "Open Source"].map((skill, index) => (
                     <Badge
                       key={index}
                       variant="secondary"
@@ -146,7 +146,7 @@ export default function PortfolioPage() {
                     >
                       {skill}
                     </Badge>
-                  ))}
+                    ))}
                 </div>
               </div>
             </CardContent>
